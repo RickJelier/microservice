@@ -21,7 +21,7 @@
             var form = document.getElementById("Form");
             form.onsubmit = function (ev) {
                 ev.preventDefault();
-                var host = "http://microserviceBackend.trafficmanager.net/server";
+                var host = "http://microserviceBackend.trafficmanager.net";
                 var data = {
                     "search": form.Word.value
                 };
@@ -29,8 +29,10 @@
                 if(form.lang != null || form.lang !== undefined){
                     data["language"] = form.lang.value;
                 }
+
+
                 $.ajax(host,{
-                    data: data,
+                    data: JSON.stringify(data),
                     method: "POST",
                     success: function (result) {
                         $("#result").html(result);
@@ -51,7 +53,7 @@
             <td>
                 <select name="lang">
                     <option>==Geen==</option>
-                    <option value="so-SO">SOM</option>
+                    <option value="en-US">English</option>
                     <option value="ar-IQ">iraq</option>
                     <option value="so-SO">afganistan</option>
                     <option value="syr-SY">syrie</option>
@@ -59,7 +61,7 @@
                 </select>
             </td>
             <td>
-                <input type="submit" value="Fuck off">
+                <input type="submit" value="Translate!">
             </td>
         </tr>
     </table>
