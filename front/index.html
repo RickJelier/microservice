@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translator</title>
+    <style>
+        *{
+            marin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        table td:first-child {
+            width: 100%;
+        }
+    </style>
+    <script src="jquery.js" ></script>
+    <script>
+        var request = new XMLHttpRequest();
+
+        window.onload = function(){
+            var form = document.getElementById("Form");
+            form.onsubmit = function (ev) {
+                ev.preventDefault();
+                var host = "http://microserviceBackend.trafficmanager.net/server";
+                var data = {
+                    "search": form.Word.value
+                };
+
+                if(form.lang != null || form.lang !== undefined){
+                    data["language"] = form.lang.value;
+                }
+                $.ajax(host,{
+                    data: data,
+                    method: "POST",
+                    success: function (result) {
+                        $("#result").html(result);
+                    }
+                })
+
+            }
+        };
+    </script>
+</head>
+<body>
+<form id="Form">
+    <table width="100%">
+        <tr>
+            <td>
+                <input name="Word" style="width: 100%">
+            </td>
+            <td>
+                <select name="lang">
+                    <option>==Geen==</option>
+                    <option value="so-SO">SOM</option>
+                    <option value="ar-IQ">iraq</option>
+                    <option value="so-SO">afganistan</option>
+                    <option value="syr-SY">syrie</option>
+                    <option value="Lt-uz-UZ">oezbekistan</option>
+                </select>
+            </td>
+            <td>
+                <input type="submit" value="Fuck off">
+            </td>
+        </tr>
+    </table>
+</form>
+
+<textarea id="result" >
+</textarea>
+</body>
+</html>
