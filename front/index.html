@@ -21,18 +21,23 @@
             var form = document.getElementById("Form");
             form.onsubmit = function (ev) {
                 ev.preventDefault();
-                var host = "http://microserviceBackend.trafficmanager.net";
+                var host = "http://microserviceBackend.trafficmanager.net/server/index.php";
+                //host = "http://microservice05.westeurope.cloudapp.azure.com/server";
                 var data = {
                     "search": form.Word.value
                 };
 
-                if(form.lang != null || form.lang !== undefined){
+                //if((form.lang.value != null) || form.lang.value !== ""){
+                //    data["language"] = form.lang.value;
+                //}
+                if(form.lang.value){
                     data["language"] = form.lang.value;
                 }
-
+                data = JSON.stringify(data);
 
                 $.ajax(host,{
-                    data: JSON.stringify(data),
+                    data: data,
+                    crossDomain: true,
                     method: "POST",
                     success: function (result) {
                         $("#result").html(result);
@@ -52,7 +57,7 @@
             </td>
             <td>
                 <select name="lang">
-                    <option>==Geen==</option>
+                    <option value="">==Geen==</option>
                     <option value="en-US">English</option>
                     <option value="ar-IQ">iraq</option>
                     <option value="so-SO">afganistan</option>
