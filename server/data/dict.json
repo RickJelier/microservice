@@ -1,0 +1,60 @@
+{
+  "nl": {
+    "lepel": {
+      "en": ["spoon"],
+      "de": ["löffel"]
+    },
+    "bank": {
+      "en": ["bank"],
+      "de": ["bank"]
+    },
+    "school": {
+      "en": ["school"],
+      "de": ["schule"]
+    },
+    "leraar": {
+      "en": ["teacher"],
+      "de": ["lehrer"]
+    }
+  },
+  "en": {
+    "bank": {
+      "nl": ["bank", "bank"],
+      "de": ["bank"]
+    },
+    "teacher": {
+      "nl": ["leraar"],
+      "de": ["lehraar"]
+    },
+    "garden": {
+      "nl": ["tuin"],
+      "de": ["garten"]
+    },
+    "building": {
+      "nl": ["gebouw"],
+      "de": ["gebäude"]
+    },
+    "phone": {
+      "nl": ["telefoon"],
+      "de": ["telefon"]
+    }
+  },
+  "de": {
+    "telefon": {
+      "en": ["phone"],
+      "nl": ["telefoon"]
+    },
+    "zimmer": {
+      "en": ["room"],
+      "nl": ["kamer"]
+    },
+    "urlaub": {
+      "en": ["holidays"],
+      "nl": ["vakantie"]
+    },
+    "mann": {
+      "en": ["man"],
+      "nl": ["man"]
+    }
+  }
+}
